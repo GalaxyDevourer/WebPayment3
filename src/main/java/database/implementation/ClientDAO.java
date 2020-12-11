@@ -48,4 +48,8 @@ public class ClientDAO extends FactoryCRUD<Client> {
     public List<String> getClientsNames() {
         return em.createQuery("SELECT c.name FROM Client c", String.class).getResultList();
     }
+
+    public List<String> getClientsIdByName(String name) {
+        return em.createQuery("SELECT c.id FROM Client c WHERE c.name = " + name, String.class).getResultList();
+    }
 }

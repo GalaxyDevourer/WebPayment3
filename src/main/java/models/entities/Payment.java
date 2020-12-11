@@ -1,6 +1,7 @@
 package models.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Table
 @Entity
@@ -12,9 +13,11 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
     @Basic
+    @NotNull
     @Column(name = "client_id")
     int clientId;
     @Basic
+    @NotNull
     @Column(name = "service_id")
     int serviceId;
 

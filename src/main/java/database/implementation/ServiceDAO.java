@@ -54,4 +54,8 @@ public class ServiceDAO extends FactoryCRUD<Service> {
     public Integer getLowFeeService() {
         return em.createQuery("SELECT s FROM Service s WHERE s.fee <= 50", Integer.class).getSingleResult();
     }
+
+    public Enum getServiceType() {
+        return em.createQuery("SELECT s.type FROM Service s", Enum.class).getSingleResult();
+    }
 }

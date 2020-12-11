@@ -19,23 +19,15 @@
     </h:head>
 
     <h:body style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;">
-        <h:form>
-            <h:outputLabel value="Welcome, #{userPanel.login} [#{userPanel.role}]" /><br/>
-            <h:outputLabel value="Do you want log off from your account? Press the botton " />
-            <h:commandButton action = "#{logOutBean.logOut}" value = "Log Out"/>
-        </h:form> <br/>
         <h:outputLabel value="There you can find information about clients!" /> <br/>
-        <h:outputLabel value="You can only browse it, but can not edit." /> <br/><br/>
 
         <h:outputText value = "Clients informations"/><b/>
 
         <h:form >
             <h:outputLabel> ID Client: </h:outputLabel>
             <h:inputText value="#{selectMergedTableBean.clientID}"/>
-            <h:outputLabel> City: </h:outputLabel>
+            <h:outputLabel> Name: </h:outputLabel>
             <h:inputText value="#{selectMergedTableBean.city}"/>
-            <h:outputLabel> Service: </h:outputLabel>
-            <h:inputText value="#{selectMergedTableBean.serviceName}"/>
 
             <h:commandButton action = "#{selectMergedTableBean.refreshTable}"
                              value = "Browse"/>

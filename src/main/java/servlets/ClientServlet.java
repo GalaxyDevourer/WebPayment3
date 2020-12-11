@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/clients")
-class StartServlet extends HttpServlet {
+class ClientServlet extends HttpServlet {
 
     //private static final String PERSISTENCE_UNIT_NAME = "webpayment";
     //private static EntityManagerFactory managerFactory;
