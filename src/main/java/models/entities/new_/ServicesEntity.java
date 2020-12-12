@@ -8,6 +8,9 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "services", schema = "webpayment")
+@NamedQueries({
+        @NamedQuery(name = "Services.select", query = "select s from ServicesEntity s")
+})
 public class ServicesEntity {
     private int id;
     private String title;
@@ -15,6 +18,7 @@ public class ServicesEntity {
     private Object type;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     public int getId() {
         return id;

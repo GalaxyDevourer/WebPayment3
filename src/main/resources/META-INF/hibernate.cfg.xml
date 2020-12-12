@@ -15,9 +15,9 @@
         <property name = "hibernate.connection.url">jdbc:mysql://localhost:3306/webpayment</property>
 
         <!-- List of XML mapping files -->
-        <mapping resource = "Employee.hbm.xml"/>
         <mapping class="models.entities.new_.ClientsEntity"/>
         <mapping class="models.entities.new_.ServicesEntity"/>
+        <mapping class="models.entities.new_.PaymentsEntity"/>
 
     </session-factory>
 </hibernate-configuration>

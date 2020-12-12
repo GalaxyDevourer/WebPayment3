@@ -16,13 +16,13 @@
         <b>Services Management</b><b/>
 
         <h:form >
-            ID Service: <h:inputText id="service_id" value="#{serviceBean.service.id}"/>
-            Title: <h:inputText id="title" value="#{serviceBean.service.title}"/>
-            Fee: <h:inputText id="fee" value="#{serviceBean.service.fee}"/>
-            Type: <h:inputText id="type" value="#{serviceBean.service.type}"/>
+            ID Service: <h:inputText id="service_id" value="#{servicesBean.service.id}"/>
+            Title: <h:inputText id="title" value="#{servicesBean.service.title}"/>
+            Fee: <h:inputText id="fee" value="#{servicesBean.service.fee}"/>
+            Type: <h:inputText id="type" value="#{servicesBean.service.type}"/>
 
-            <h:commandButton action = "#{serviceBean.updateService()}" value = "Insert or Update"/>
-            <h:commandButton action = "#{serviceBean.deleteService()}" value = "Delete"/>
+            <h:commandButton action = "#{servicesBean.updateServices()}" value = "Insert or Update"/>
+            <h:commandButton action = "#{servicesBean.deleteServices()}" value = "Delete"/>
         </h:form> <br/>
 
     </h:body>
