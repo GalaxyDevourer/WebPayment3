@@ -21,7 +21,16 @@
           <factory-entry name="chmnu.persistence" />
         </datasource-mapping>
         <naming-strategy-map />
-        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/java/META-INF/persistence.xml" />
+        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/resources/META-INF/persistence.xml" />
+      </configuration>
+    </facet>
+    <facet type="hibernate" name="Hibernate">
+      <configuration>
+        <datasource-map>
+          <unit-entry name="META-INF:hibernate.cfg.xml" value="8639c551-b9aa-41e2-aa11-e578cc0fa276" />
+        </datasource-map>
+        <naming-strategy-map />
+        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/resources/META-INF/hibernate.cfg.xml" />
       </configuration>
     </facet>
   </component>
@@ -39,8 +48,8 @@
     <orderEntry type="library" name="Validation API-2.0.1.Final" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="TomEE 9.0.37" level="application_server_libraries" />
     <orderEntry type="library" name="Mojarra-2.4.0" level="project" />
-    <orderEntry type="library" name="PrimeFaces-6.1" level="project" />
     <orderEntry type="library" name="JPA 2.0-2.0" level="project" />
+    <orderEntry type="library" name="Hibernate 5.4.11-5.4.11" level="project" />
     <orderEntry type="library" name="Maven: com.sun.faces:jsf-api:2.2.10" level="project" />
     <orderEntry type="library" name="Maven: javax.enterprise:cdi-api:1.2" level="project" />
     <orderEntry type="library" name="Maven: javax.el:javax.el-api:3.0.0" level="project" />

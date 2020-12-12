@@ -1,21 +1,19 @@
-package database.implementation;
+package database.implementation.old;
 
 import database.interfaces.FactoryCRUD;
-import models.entities.Service;
+import models.entities.old.Service;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Stateless
 public class ServiceDAO extends FactoryCRUD<Service> {
-    EntityManager entityManager;
+    @PersistenceContext(name = "chmnu.persistence")
+    EntityManager em;
 
     public ServiceDAO () {
-        EntityManagerFactory ef = Persistence.createEntityManagerFactory("chmnu.persistence");
-        em = ef.createEntityManager();
     }
 
     @Override
@@ -29,7 +27,7 @@ public class ServiceDAO extends FactoryCRUD<Service> {
     }
 
     @Override
-    public void checkPersist(Service service) {
+    public void insert(Service service) {
         em.getTransaction().begin();
         em.persist(service);
         em.getTransaction().commit();
@@ -37,7 +35,7 @@ public class ServiceDAO extends FactoryCRUD<Service> {
 
     @Override
     public void update(Service service) {
-        checkPersist(service);
+        insert(service);
     }
 
     @Override

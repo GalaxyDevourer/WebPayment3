@@ -1,19 +1,19 @@
-package database.implementation;
+package database.implementation.old;
 
 import database.interfaces.FactoryCRUD;
-import models.entities.Client;
+import models.entities.old.Client;
 
 import javax.ejb.Stateless;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Stateless
 public class ClientDAO extends FactoryCRUD<Client> {
+    @PersistenceContext(name = "chmnu.persistence")
+    EntityManager em;
 
     public ClientDAO () {
-        EntityManagerFactory ef = Persistence.createEntityManagerFactory("chmnu.persistence");
-        em = ef.createEntityManager();
     }
 
     @Override
@@ -27,7 +27,7 @@ public class ClientDAO extends FactoryCRUD<Client> {
     }
 
     @Override
-    public void checkPersist(Client client) {
+    public void insert(Client client) {
         em.getTransaction().begin();
         em.persist(client);
         em.getTransaction().commit();
@@ -35,7 +35,7 @@ public class ClientDAO extends FactoryCRUD<Client> {
 
     @Override
     public void update(Client client) {
-        checkPersist(client);
+        insert(client);
     }
 
     @Override

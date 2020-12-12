@@ -1,5 +1,6 @@
-package models.entities;
+package models.entities.old;
 
+import models.entities.ServiceType;
 import models.validators.Fee;
 
 import javax.persistence.*;

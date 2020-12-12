@@ -1,4 +1,4 @@
-package models.entities;
+package models.entities.old;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

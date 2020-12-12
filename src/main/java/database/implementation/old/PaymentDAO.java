@@ -1,19 +1,19 @@
-package database.implementation;
+package database.implementation.old;
 
 import database.interfaces.FactoryCRUD;
-import models.entities.Payment;
+import models.entities.old.Payment;
 
 import javax.ejb.Stateless;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Stateless
 public class PaymentDAO extends FactoryCRUD<Payment> {
+    @PersistenceContext(name = "chmnu.persistence")
+    EntityManager em;
 
     public PaymentDAO () {
-        EntityManagerFactory ef = Persistence.createEntityManagerFactory("chmnu.persistence");
-        em = ef.createEntityManager();
     }
 
     @Override
@@ -27,7 +27,7 @@ public class PaymentDAO extends FactoryCRUD<Payment> {
     }
 
     @Override
-    public void checkPersist(Payment payment) {
+    public void insert(Payment payment) {
         em.getTransaction().begin();
         em.persist(payment);
         em.getTransaction().commit();
@@ -35,7 +35,7 @@ public class PaymentDAO extends FactoryCRUD<Payment> {
 
     @Override
     public void update(Payment payment) {
-        checkPersist(payment);
+        insert(payment);
     }
 
     @Override

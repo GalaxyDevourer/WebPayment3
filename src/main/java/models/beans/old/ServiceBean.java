@@ -1,14 +1,14 @@
-package models.beans;
+package models.beans.old;
 
-import database.implementation.ServiceDAO;
-import models.entities.Service;
+import database.implementation.old.ServiceDAO;
+import models.entities.old.Service;
 
-import javax.annotation.ManagedBean;
 import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
 import java.io.Serializable;
 import java.util.List;
 
-@ManagedBean("serviceBean")
+@Named("serviceBean")
 @SessionScoped
 public class ServiceBean implements Serializable {
     private ServiceDAO serviceDAO;
@@ -24,7 +24,7 @@ public class ServiceBean implements Serializable {
 
     public String updateService() {
         if(service.getId() == null) {
-            serviceDAO.checkPersist(service);
+            serviceDAO.insert(service);
         } else {
             serviceDAO.update(service);
         }

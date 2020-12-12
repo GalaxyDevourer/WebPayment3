@@ -11,16 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/clients")
-class ClientServlet extends HttpServlet {
-
-    //private static final String PERSISTENCE_UNIT_NAME = "webpayment";
-    //private static EntityManagerFactory managerFactory;
-
+class StartPageServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/panels/clients.xhtml");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/panels/startpage.xhtml");
         dispatcher.forward(request, response);
     }
 }

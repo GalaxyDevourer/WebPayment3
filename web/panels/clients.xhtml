@@ -7,8 +7,8 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
     <h:head>
-        <title>User panel</title>
         <head>
+            <title>Clients List</title>
             <style type="text/css">
                 .center {
                     display: flex;
@@ -21,55 +21,25 @@
     <h:body style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;">
         <h:outputLabel value="There you can find information about clients!" /> <br/>
 
-        <h:outputText value = "Clients informations"/><b/>
-
-        <h:form >
-            <h:outputLabel> ID Client: </h:outputLabel>
-            <h:inputText value="#{selectMergedTableBean.clientID}"/>
-            <h:outputLabel> Name: </h:outputLabel>
-            <h:inputText value="#{selectMergedTableBean.city}"/>
-
-            <h:commandButton action = "#{selectMergedTableBean.refreshTable}"
-                             value = "Browse"/>
-        </h:form> <br/>
+        <b>Clients List</b><b/>
 
         <div class="center">
             <div class="wrapper">
                 <h:form style="margin-left: auto">
-                    <h:dataTable value="#{selectMergedTableBean.customMergedTable}" var="table"
+                    <h:dataTable value="#{clientsBean.getClients()}" var="table"
                                  border="2" cellspacing="1" cellpadding="1" >
+                        <h:column>
+                            <f:facet name="header">Id</f:facet>
+                            <h:outputText value="#{table.id}"/>
+                        </h:column>
                         <h:column>
                             <f:facet name="header">Name</f:facet>
                             <h:outputText value="#{table.name}"/>
                         </h:column>
-                        <h:column>
-                            <f:facet name="header">Surname</f:facet>
-                            <h:outputText value="#{table.surname}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">City</f:facet>
-                            <h:outputText value="#{table.city}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">Servicename</f:facet>
-                            <h:outputText value="#{table.servicename}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">Monthlyamount</f:facet>
-                            <h:outputText value="#{table.monthamount}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">Date</f:facet>
-                            <h:outputText value="#{table.date}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">Payment</f:facet>
-                            <h:outputText value="#{table.payment}"/>
-                        </h:column>
                     </h:dataTable>
                 </h:form>
             </div>
-        </div>
+        </div> <b/>
 
     </h:body>
 </f:view>

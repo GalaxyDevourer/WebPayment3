@@ -1,14 +1,14 @@
-package models.beans;
+package models.beans.old;
 
-import database.implementation.PaymentDAO;
-import models.entities.Payment;
+import database.implementation.old.PaymentDAO;
+import models.entities.old.Payment;
 
-import javax.annotation.ManagedBean;
 import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
 import java.io.Serializable;
 import java.util.List;
 
-@ManagedBean("paymentBean")
+@Named("paymentBean")
 @SessionScoped
 public class PaymentBean implements Serializable {
     private PaymentDAO paymentDAO;
@@ -24,7 +24,7 @@ public class PaymentBean implements Serializable {
 
     public void updatePayment() {
         if(payment.getId() == null) {
-            paymentDAO.checkPersist(payment);
+            paymentDAO.insert(payment);
         } else {
             paymentDAO.update(payment);
         }

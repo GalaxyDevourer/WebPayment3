@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:outputText value = "There you can navigate to Client and Service management panels"/><b/>
+
+    <h:form >
+        <h:commandButton action = "clients" value = "Go to Client List"/> or
+        <h:commandButton action = "services" value = "Go to Service List"/> <br/>
+        <h:commandButton action = "clients_manage" value = "Go to Client Manage"/> or
+        <h:commandButton action = "services_manage" value = "Go to Service Manage"/>
+    </h:form> <br/>
+</f:view>
+</html>

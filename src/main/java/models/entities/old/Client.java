@@ -1,4 +1,4 @@
-package models.entities;
+package models.entities.old;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
@@ -6,7 +6,7 @@ import javax.validation.constraints.Size;
 @Table
 @Entity
 @NamedQueries({
-        @NamedQuery(name = "Client.select", query = "select c from Client c")
+        @NamedQuery(name = "Client.select", query = "select c from clients c")
 })
 public class Client {
     @Id

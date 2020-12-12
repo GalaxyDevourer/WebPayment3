@@ -1,14 +1,14 @@
-package models.beans;
+package models.beans.old;
 
-import database.implementation.ClientDAO;
-import models.entities.Client;
+import database.implementation.old.ClientDAO;
+import models.entities.old.Client;
 
-import javax.annotation.ManagedBean;
 import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
 import java.io.Serializable;
 import java.util.List;
 
-@ManagedBean("clientBean")
+@Named("clientBean")
 @SessionScoped
 public class ClientBean implements Serializable {
     private ClientDAO clientDAO;
@@ -24,7 +24,7 @@ public class ClientBean implements Serializable {
 
     public String updateClient() {
         if(client.getId() == null) {
-            clientDAO.checkPersist(client);
+            clientDAO.insert(client);
         } else {
             clientDAO.update(client);
         }
